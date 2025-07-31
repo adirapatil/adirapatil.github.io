@@ -1,1 +1,314 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sulekha Clone - Find Local Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>ServiceConnect</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="providers.html">Service Providers</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="login-btn">Login</button>
+                <button class="signup-btn">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Find Trusted Local Services</h2>
+                <p>Connect with verified service providers in your area</p>
+                <div class="search-box">
+                    <input type="text" placeholder="What service are you looking for?">
+                    <input type="text" placeholder="Location">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Services Section -->
+    <section class="popular-services">
+        <div class="container">
+            <h2 class="section-title">Popular Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home Cleaning</h3>
+                    <p>Professional home cleaning services</p>
+                    <a href="services/home-cleaning.html" class="service-link">View Details</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Plumbing</h3>
+                    <p>Expert plumbing repair and installation</p>
+                    <a href="services/plumbing.html" class="service-link">View Details</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrician</h3>
+                    <p>Certified electricians for all needs</p>
+                    <a href="services/electrician.html" class="service-link">View Details</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Painting</h3>
+                    <p>Professional painting services</p>
+                    <a href="services/painting.html" class="service-link">View Details</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Computer Repair</h3>
+                    <p>Tech support and computer repair</p>
+                    <a href="services/computer-repair.html" class="service-link">View Details</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Car Service</h3>
+                    <p>Complete auto care and maintenance</p>
+                    <a href="services/car-service.html" class="service-link">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Search</h3>
+                    <p>Find the service you need</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Compare</h3>
+                    <p>Compare verified providers</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Connect</h3>
+                    <p>Contact and hire the best</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Review</h3>
+                    <p>Rate your experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Providers Section -->
+    <section class="featured-providers">
+        <div class="container">
+            <h2 class="section-title">Top Service Providers</h2>
+            <div class="providers-grid">
+                <div class="provider-card">
+                    <div class="provider-img">
+                        <img src="images/provider1.jpg" alt="Provider 1">
+                    </div>
+                    <div class="provider-info">
+                        <h3>ABC Cleaning Services</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.5 (120 reviews)</span>
+                        </div>
+                        <p>Professional home and office cleaning services</p>
+                        <a href="providers/abc-cleaning.html" class="provider-link">View Profile</a>
+                    </div>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-img">
+                        <img src="images/provider2.jpg" alt="Provider 2">
+                    </div>
+                    <div class="provider-info">
+                        <h3>Quick Fix Plumbing</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0 (85 reviews)</span>
+                        </div>
+                        <p>24/7 emergency plumbing services</p>
+                        <a href="providers/quick-fix-plumbing.html" class="provider-link">View Profile</a>
+                    </div>
+                </div>
+                <div class="provider-card">
+                    <div class="provider-img">
+                        <img src="images/provider3.jpg" alt="Provider 3">
+                    </div>
+                    <div class="provider-info">
+                        <h3>ElectroPro Services</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.0 (95 reviews)</span>
+                        </div>
+                        <p>Certified electricians for residential and commercial needs</p>
+                        <a href="providers/electro-pro.html" class="provider-link">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Found an amazing cleaning service through this platform. The booking was easy and the service was excellent!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/user1.jpg" alt="User 1">
+                        <div class="author-info">
+                            <h4>John Smith</h4>
+                            <p>New York</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Quick response from multiple plumbers when I had an emergency. Saved me from a disaster!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/user2.jpg" alt="User 2">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Chicago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section class="app-download">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-info">
+                    <h2>Download Our Mobile App</h2>
+                    <p>Find and book services on the go with our mobile application</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-btn">
+                            <i class="fab fa-apple"></i>
+                            <span>App Store</span>
+                        </a>
+                        <a href="#" class="app-btn">
+                            <i class="fab fa-google-play"></i>
+                            <span>Google Play</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="app-image">
+                    <img src="images/app-mockup.png" alt="Mobile App">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ServiceConnect</h3>
+                    <p>Your trusted platform for finding local services and service providers.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="providers.html">Service Providers</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Popular Services</h3>
+                    <ul>
+                        <li><a href="services/home-cleaning.html">Home Cleaning</a></li>
+                        <li><a href="services/plumbing.html">Plumbing</a></li>
+                        <li><a href="services/electrician.html">Electrician</a></li>
+                        <li><a href="services/painting.html">Painting</a></li>
+                        <li><a href="services/car-service.html">Car Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, New York, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@serviceconnect.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ServiceConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
