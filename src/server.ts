@@ -6,23 +6,110 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import { AuthApiService } from './services/auth-api.service';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+// Middleware
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// CORS middleware
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
+
 /**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
+ * Authentication API endpoints
  */
+app.get('/api/test', async (req, res) => {
+  try {
+    const response = await AuthApiService.testConnection();
+    res.json(response);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error'
+    });
+  }
+});
+
+app.post('/api/auth/signup', async (req, res) => {
+  try {
+    const response = await AuthApiService.signup(req.body);
+    const statusCode = response.success ? 201 : 400;
+    res.status(statusCode).json(response);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error'
+    });
+  }
+});
+
+app.post('/api/auth/login', async (req, res) => {
+  try {
+    const response = await AuthApiService.login(req.body);
+    const statusCode = response.success ? 200 : 401;
+    res.status(statusCode).json(response);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error'
+    });
+  }
+});
+
+app.post('/api/auth/forgot-password', async (req, res) => {
+  try {
+    const response = await AuthApiService.forgotPassword(req.body.email);
+    const statusCode = response.success ? 200 : 400;
+    res.status(statusCode).json(response);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error'
+    });
+  }
+});
+
+app.post('/api/auth/reset-password', async (req, res) => {
+  try {
+    const response = await AuthApiService.resetPassword(req.body.token, req.body.newPassword);
+    const statusCode = response.success ? 200 : 400;
+    res.status(statusCode).json(response);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error'
+    });
+  }
+});
+
+app.get('/api/auth/verify-token', async (req, res) => {
+  try {
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    const response = await AuthApiService.verifyToken(token || '');
+    const statusCode = response.success ? 200 : 401;
+    res.status(statusCode).json(response);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error'
+    });
+  }
+});
 
 /**
  * Serve static files from /browser
